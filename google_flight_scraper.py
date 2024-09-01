@@ -67,7 +67,7 @@ def main():
         flight_data.append(flight_info)
 
     # Save results to a JSON file
-    json.dump(flight_data, open('google_flights_data.json', 'w'), indent = 4)
+    json.dump(flight_data, open('./data/google_flights_data.json', 'w'), indent = 4)
 
 if __name__ == "__main__":
     main()
