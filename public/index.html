@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet" />
+    <!-- This meta tag ensures that the website renders correctly across different device sizes, enhancing mobile responsiveness. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to the external CSS stylesheet. Uncomment if you wish to customize or add styling. -->
+    <!-- <link rel="stylesheet" href="styles.css">   -->
+
+    <title>Flight notifier</title>
+</head>
+<body>
+    <main>
+        <section id="flight-notifier">
+            <h1>Flight Notifier</h1>
+            <div id="buttons">
+                <input id="origin" type="text" placeholder="Origin airport" required>
+                <input id="destination" type="text" placeholder="Destination airport" required>
+                <input id="departDate" type="date" placeholder="Departure date" required>
+                <input id="returnDate" type="date" placeholder="Return date">
+                <input id="email" type="text" placeholder="Email" required>
+                <input id="search" type="button" value="Search">
+            </div>
+            <div id="result" style="display: none;"></div>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

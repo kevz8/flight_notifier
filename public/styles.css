@@ -1,0 +1,59 @@
+hr {
+    border-top: 2px solid rgb(44, 51, 62);
+    margin: auto;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-image: url("background.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+main {
+    background-color: rgba(225, 190, 170, 0.85);
+    position: relative;
+    top: 30%;
+    border: 2px solid;
+    border-radius: 5px;
+    min-width: 540px;
+    max-width: 100%;
+    margin: auto;
+    padding: 2em;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttons input {
+    flex: 1 1 120px;
+    padding: 1 10px;
+    border: 10px;
+    font-size: 16px;
+    width: 50%;
+    height: 40px;
+}
+
+#search {
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 5em;
+}
