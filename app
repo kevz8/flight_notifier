@@ -19,7 +19,6 @@ def index():
     return app.send_static_file('index.html')
 
 @app.route('/search', methods=['POST'])
-
 def search():
     data = request.get_json()
     origin = data.get('origin')
@@ -28,12 +27,18 @@ def search():
     # returnDate = data.get('returnDate')
     email = data.get('email')
 
+    if not origin or not destination or not departDate:
+        return jsonify(error = "Please fill in all required values")
+
     currOrigin = origin
     currDestination = destination
     currDate = departDate
     currEmail = email
 
-    scraper_main(origin, destination, departDate)
+    result = scraper_main(origin, destination, departDate)
+    if (result == -1): 
+        return jsonify("Unable to retrieve data")
+
     flights = extract_json()
     subject = 'Flight tracker'
     cheapest = find_cheapest_flight(flights)

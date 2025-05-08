@@ -6,12 +6,18 @@ async function retrieve() {
     let email = document.getElementById("email").value.trim(); 
 
     // if (returnDate === '') returnDate = null;
-
-    const data = {origin, destination, departDate, email};
-
     const resultSection = document.getElementById("result");
     resultSection.style.display = "block";
     resultSection.textContent = 'Searching...';
+
+    if (!origin || !destination || !departDate) {
+        resultSection.textContent = "Please enter required fields";
+        return;
+    }
+
+    const data = {origin, destination, departDate, email};
+
+    
 
     try {
         const response = await fetch("/search", {

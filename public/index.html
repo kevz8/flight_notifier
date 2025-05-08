@@ -16,8 +16,8 @@
         <section id="flight-notifier">
             <h1>Flight Notifier</h1>
             <div id="buttons">
-                <input id="origin" type="text" placeholder="Origin airport" required>
-                <input id="destination" type="text" placeholder="Destination airport" required>
+                <input id="origin" type="text" placeholder="Origin airport" required minlength="3" maxlength="3" style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase().replace(/[^A-Z]/g, '')">
+                <input id="destination" type="text" placeholder="Destination airport" required minlength="3" maxlength="3" style="text-transform: uppercase;" oninput="this.value = this.value.toUpperCase().replace(/[^A-Z]/g, '')">
                 <input id="departDate" type="date" placeholder="Departure date" required>
                 <!-- <input id="returnDate" type="date" placeholder="Return date"> -->
                 <input id="email" type="text" placeholder="Email (optional)">
