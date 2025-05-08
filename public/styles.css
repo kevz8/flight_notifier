@@ -73,3 +73,7 @@ h1 {
     cursor: pointer;
     width: 5em;
 }
+
+input::placeholder {
+    text-transform: none;
+}
