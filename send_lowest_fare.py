@@ -3,18 +3,15 @@ import smtplib
 from email.mime.text import MIMEText
 
 def extract_json():
-    with open('./data/google_flights_data.json') as file:
+    with open('data/google_flights_data.json') as file:
         flights = json.load(file)
     return flights
 
 def find_cheapest_flight(flights):
-    clean_prices = clean_price_data(flights['price'])
-    cheapest_flight = 0
-
-    for price in clean_prices:
-        if price < cheapest_flight:
-            cheapest_flight = price
-
+    def parse_price(price):
+        return float(price.replace('CA$', '').replace(',', '').strip())
+    
+    cheapest_flight = min(flights, key=lambda flight: parse_price(flight['price']))
     return cheapest_flight
 
 def clean_price_data(price):
@@ -22,10 +19,10 @@ def clean_price_data(price):
 
 def send_email(subject, body, to_email):
     
-    smtp_server = 'smtp.email.com'
+    smtp_server = 'smtp.gmail.com'
     smtp_port = 587
-    smtp_user = 'smtp email'
-    smtp_password = 'smtp password'
+    smtp_user = 'email'
+    smtp_password = 'password'
     
     msg = MIMEText(body)
     msg['Subject'] = subject
