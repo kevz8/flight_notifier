@@ -26,5 +26,7 @@ This project scrapes flight listings from Google Flights based on user-inputted 
 
 2. run ```pip install -r requirements.txt```
 
-3. run the server
+3. Enter email and password information for ```smtp_user``` and ```smtp_password```
+
+4. run the server
 ```python app```
