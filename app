@@ -16,10 +16,12 @@ global currEmail
 
 @app.route('/')
 def index():
+    """Frontend homepage"""
     return app.send_static_file('index.html')
 
 @app.route('/search', methods=['POST'])
 def search():
+    """Handle search requests from frontend"""
     data = request.get_json()
     origin = data.get('origin')
     destination = data.get('destination')
@@ -55,6 +57,7 @@ def search():
 
 @app.route('/clear', methods=['POST'])
 def clear_db():
+    """Clear database"""
     try:
         drop_table()
     except:
@@ -64,6 +67,7 @@ def clear_db():
 
 @app.route('/graph')
 def graph():
+    """Generate a price trend graph"""
     origin = request.args.get('origin')
     destination = request.args.get('destination')
     departDate = request.args.get('departDate')
@@ -76,7 +80,7 @@ def graph():
     return send_file(os.path.join(plot_dir, 'time_series.png'), mimetype = 'image/png')
 
 def schedule():
-
+    """Sends email of cheapest flight data"""
     if not currOrigin or not currDestination or not currDate:
         return
     
@@ -96,6 +100,7 @@ def schedule():
 
     return jsonify({ 'status': 'ok', 'cheapest': cheapest['price']})
 
+# Runs app
 if __name__ == '__main__':
     scheduler = BackgroundScheduler()
     scheduler.add_job(schedule, 'interval', hours = 24)
