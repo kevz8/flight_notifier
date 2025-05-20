@@ -24,7 +24,7 @@ This project scrapes flight listings from Google Flights based on user-inputted 
    git clone https://github.com/your-username/google-flights-scraper.git
    cd google-flights-scraper
 
-2. Install dependencies
+2. run ```pip install -r requirements.txt```
 
 3. run the server
 ```python app.py```
