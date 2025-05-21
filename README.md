@@ -26,7 +26,7 @@ This project scrapes flight listings from Google Flights based on user-inputted 
 
 2. run ```pip install -r requirements.txt```
 
-3. Enter email and password information for ```smtp_user``` and ```smtp_password``` (Requires the 16-character unique App Password instead of the account password) variables in send_lowest_fare.py main function.
+3. Enter email and password information for ```smtp_user``` and ```smtp_password``` (Requires the 16-character unique App Password instead of the account password) variables in send_lowest_fare.py send_email function.
 
 4. run the server
 ```python app```
