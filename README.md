@@ -17,6 +17,14 @@ This project scrapes flight listings from Google Flights based on user-inputted 
 - Supports automated scraping
 - Can track rolling averages of flight prices
 
+## Sample:
+
+
+
+https://github.com/user-attachments/assets/8f645915-fb0c-4340-a6b4-414505e791fc
+
+
+
 ## Setup Instructions
 
 1. **Clone the repo**
